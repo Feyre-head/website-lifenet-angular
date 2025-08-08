@@ -1,0 +1,117 @@
+<!-- Planos Section -->
+<section class="page-section py-5 overflow-hidden" id="plans">
+
+    <div class="container position-relative">
+
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <h2 class="section-caption-gradient mb-20 mb-xs-10">Nossos planos</h2>
+                <div class="section-line-gradient mx-auto mb-20"></div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <h3 class="section-title mb-40 mb-sm-30">Pensados para você!</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <p class="text-gray mb-70 mb-sm-50">
+                    Planos de Internet pensados para as suas necessidades de conexão! Oferecemos serviços de
+                    qualidade com preço justo e acessível!
+                </p>
+            </div>
+        </div>
+
+        <!-- <div class="d-flex flex-wrap gap-3 justify-content-center">
+
+            <div
+                class="bg-border-gradient px-5 py-5 gap-4 d-flex flex-column justify-content-center align-items-center flex-even">
+                <div class="text-uppercase text-center flex-1">
+                    <h3 class="mb-0">Plano 90</h3>
+                    <span>Fibra Óptica</span>
+                </div>
+                <div class="d-flex flex-column gap-3 justify-content-center align-items-center">
+                    <span class="text-uppercase">90 Mega</span>
+                    <ul class="list-group">
+                        <li><b>90 Mbps</b> Upload</li>
+                        <li><b>90 Mbps</b> Download</li>
+                        <li>Suporte Técnico</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="bg-border-gradient px-5 py-5 gap-4 d-flex flex-column justify-content-center align-items-center flex-even">
+                <div class="text-uppercase text-center flex-1">
+                    <h3 class="mb-0">Plano 370</h3>
+                    <span>Fibra Óptica</span>
+                </div>
+                <div class="d-flex flex-column gap-3 justify-content-center align-items-center">
+                    <span class="text-uppercase">370 Mega</span>
+                    <ul class="list-group">
+                        <li><b>370 Mbps</b> Upload</li>
+                        <li><b>370 Mbps</b> Download</li>
+                        <li>Suporte Técnico</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="bg-border-gradient px-5 py-5 gap-4 d-flex flex-column justify-content-center align-items-center flex-even">
+                <div class="text-uppercase text-center flex-1">
+                    <h3 class="mb-0">Plano 670</h3>
+                    <span>Fibra Óptica</span>
+                </div>
+                <div class="d-flex flex-column gap-3 justify-content-center align-items-center">
+                    <span class="text-uppercase">670 Mega</span>
+                    <ul class="list-group">
+                        <li><b>670 Mbps</b> Upload</li>
+                        <li><b>670 Mbps</b> Download</li>
+                        <li>Suporte Técnico</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="bg-border-gradient px-5 py-5 gap-4 d-flex flex-column justify-content-center align-items-center flex-even">
+                <div class="text-uppercase text-center flex-1">
+                    <h3 class="mb-0">Plano 750</h3>
+                    <span>Fibra Óptica</span>
+                </div>
+                <div class="d-flex flex-column gap-3 justify-content-center align-items-center">
+                    <span class="text-uppercase">750 Mega</span>
+                    <ul class="list-group">
+                        <li><b>750 Mbps</b> Upload</li>
+                        <li><b>750 Mbps</b> Download</li>
+                        <li>Suporte Técnico</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div> -->
+
+        <ul class="d-flex flex-wrap gap-3 justify-content-center ali" *ngIf="!isLoading" style="list-style-type: none;">
+            <li *ngFor="let plano of planos" class="plano__style">
+                <div
+                    class="bg-border-gradient px-5 py-5 gap-4 d-flex flex-column justify-content-center align-items-center flex-even plano_shadow">
+                    <div class="text-uppercase text-center flex-1">
+                        <h3 class="mb-0">Plano {{plano.velocidade/1000}}</h3>
+                        <span>Fibra Óptica</span>
+                    </div>
+                    <div class="d-flex flex-column gap-3 justify-content-center align-items-center">
+                        <!-- <span class="text-uppercase"> {{plano.velocidade/1000}} Mega</span> -->
+                        <ul class="list-group">
+                            <li><b>{{plano.velocidade/1000}} Mbps</b> Upload</li>
+                            <li><b>{{plano.velocidade/1000}} Mbps</b> Download</li>
+                            <li>Suporte Técnico</li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+</section>
+<!-- End Planos Section -->
