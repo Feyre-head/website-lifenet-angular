@@ -1,13 +1,12 @@
 import { bootstrapApplication } from '@angular/platform-browser';
+import { AppComponent } from '../../app.component';
 import { provideRouter } from '@angular/router';
-import { AppComponent } from './app/app.component';
-import { routes } from './app/app.routes';
 import { provideHttpClient } from '@angular/common/http';
-import { importProvidersFrom } from '@angular/core';
+import { routes } from '../../app.routes';
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes),
-    provideHttpClient(),
+    provideHttpClient()
   ]
-}).catch((err: unknown) => console.error(err));
+});

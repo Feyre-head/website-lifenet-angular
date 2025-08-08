@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, RouterOutlet, provideRouter } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',  
+  templateUrl: './app.component.html',
+  standalone: true,
+  imports: [RouterOutlet],
 })
+
 export class AppComponent implements OnInit {
   title = 'lifenet-angular';
   constructor(private router: Router) { }

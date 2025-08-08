@@ -1,17 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-plans',
   templateUrl: './plans.component.html',
-  styleUrls: ['./plans.component.css']
+  styleUrls: ['./plans.component.css'],
+  standalone: true,
+  imports: [CommonModule] // necessário para usar @if e @for no template
 })
 export class PlansComponent implements OnInit {
-
-  planos : Plano[] = [];
+  planos: Plano[] = [];
   isLoading: boolean = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -23,13 +25,14 @@ export class PlansComponent implements OnInit {
       valorsite: false
     };
 
-    this.http.post<any>('https://www.cpsadmin.com.br/api/plano/get-planos-por-empresa', body).subscribe({
-      next: (data: Plano[]) => {
+    this.http.post<Plano[]>('https://www.cpsadmin.com.br/api/plano/get-planos-por-empresa', body).subscribe({
+      next: (data) => {
         this.planos = data;
         this.isLoading = false;
       },
       error: error => {
-        console.error('There was an error!', error);
+        console.error('Erro ao carregar planos!', error);
+        this.isLoading = false;
       }
     });
   }
